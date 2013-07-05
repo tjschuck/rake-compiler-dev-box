@@ -1,0 +1,13 @@
+require "bundler/gem_tasks"
+require "rake/extensiontask"
+require "rake/javaextensiontask"
+
+if RUBY_PLATFORM =~ /java/
+  Rake::JavaExtensionTask.new("sample_gem_ext") do |ext|
+    ext.ext_dir = 'ext/sample_gem'
+  end
+else
+  Rake::ExtensionTask.new("sample_gem_ext") do |ext|
+    ext.ext_dir = 'ext/sample_gem'
+  end
+end

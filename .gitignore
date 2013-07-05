@@ -1,3 +1,8 @@
 tmp
 .DS_Store
 .vagrant
+*.o
+*.bundle
+*.so
+*.jar
+Gemfile.lock
