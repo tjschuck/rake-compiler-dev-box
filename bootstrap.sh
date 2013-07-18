@@ -14,5 +14,6 @@ $as_vagrant 'echo "gem: --no-ri --no-rdoc" >> ~/.gemrc'
 $as_vagrant 'curl -L https://get.rvm.io | bash -s stable'
 
 $as_vagrant '~/.rvm/bin/rvm install jruby'
+$as_vagrant '~/.rvm/bin/rvm install 2.0.0'
 $as_vagrant '~/.rvm/bin/rvm install 1.9.3'
 $as_vagrant '~/.rvm/bin/rvm install 1.8.7'
