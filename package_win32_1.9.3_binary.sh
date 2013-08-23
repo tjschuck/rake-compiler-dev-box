@@ -11,6 +11,5 @@ cd $1
 
 rvm use 1.9.3
 gem install bundler && bundle install
-bundle exec rake-compiler cross-ruby VERSION=1.9.3-p448
 
 bundle exec rake cross native gem RUBY_CC_VERSION=1.9.3
