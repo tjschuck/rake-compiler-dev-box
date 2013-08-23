@@ -3,6 +3,9 @@
 set -e
 source "$HOME/.rvm/scripts/rvm"
 
+# prepare rubies for cross-compilation
+./prepare_xrubies.sh
+
 # shared directory between VM and host
 cd '/vagrant'
 
