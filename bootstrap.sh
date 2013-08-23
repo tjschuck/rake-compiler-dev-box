@@ -32,13 +32,12 @@ if ! grep -q $mingw_w64_paths $home/.bash_profile; then
 fi
 
 # do not generate documentation for gems
-
 $as_vagrant 'echo "gem: --no-ri --no-rdoc" >> ~/.gemrc'
 
 # install rvm
-
 $as_vagrant 'curl -L https://get.rvm.io | bash -s stable'
 
+# install rubies
 $as_vagrant '~/.rvm/bin/rvm install jruby'
 $as_vagrant '~/.rvm/bin/rvm install 2.0.0'
 $as_vagrant '~/.rvm/bin/rvm install 1.9.3'
