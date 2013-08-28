@@ -18,7 +18,7 @@ rake-compiler + Vagrant = easy native gems for all.
 Easy-peasy:
 
     $ git clone https://github.com/tjschuck/rake-compiler-dev-box.git
-    $ cd rails-compiler-dev-box
+    $ cd rake-compiler-dev-box
     $ vagrant up
 
 That's it!  Go grab a cup of coffee, though -- it can take a couple of minutes to build the first time.
