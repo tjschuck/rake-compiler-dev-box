@@ -24,6 +24,27 @@ if [ ! -f "$home/mingw/$mingw64" ]; then
     $as_vagrant "tar -C ~/mingw -xf ~/mingw/$mingw64"
 fi
 
+# Install wrappers for strip commands
+if [ ! -f "$home/mingw/mingw32/bin/i686-w64-mingw32-strip.bin" ]; then
+    echo "Install wrapper for i686-w64-mingw32-strip"
+    mv $home/mingw/mingw32/bin/i686-w64-mingw32-strip $home/mingw/mingw32/bin/i686-w64-mingw32-strip.bin
+    cp strip_wrapper $home/mingw/mingw32/bin/i686-w64-mingw32-strip
+fi
+
+if [ ! -f "$home/mingw/mingw64/bin/x86_64-w64-mingw32-strip.bin" ]; then
+    echo "Install wrapper for x86_64-w64-mingw32-strip"
+    mv $home/mingw/mingw64/bin/x86_64-w64-mingw32-strip $home/mingw/mingw64/bin/x86_64-w64-mingw32-strip.bin
+    cp strip_wrapper $home/mingw/mingw64/bin/x86_64-w64-mingw32-strip
+fi
+
+if [ ! -f "/usr/bin/i586-mingw32msvc-strip.bin" ]; then
+    echo "Install wrapper for i586-mingw32msvc-strip"
+    mv /usr/bin/i586-mingw32msvc-strip /usr/bin/i586-mingw32msvc-strip.bin
+    cp strip_wrapper /usr/bin/i586-mingw32msvc-strip
+fi
+
+
+
 # add mingw-w64 to the PATH
 mingw_w64_paths="$home/mingw/mingw32/bin:$home/mingw/mingw64/bin"
 
