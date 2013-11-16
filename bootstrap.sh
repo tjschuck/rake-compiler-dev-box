@@ -30,6 +30,9 @@ mingw_w64_paths="$home/mingw/mingw32/bin:$home/mingw/mingw64/bin"
 if ! grep -q $mingw_w64_paths $home/.bash_profile; then
     echo "export PATH=\$PATH:$mingw_w64_paths" >> $home/.bash_profile
 fi
+if ! grep -q "~/.rvm/scripts/rvm" $home/.bash_profile; then
+    echo "source ~/.rvm/scripts/rvm" >> $home/.bash_profile
+fi
 
 # do not generate documentation for gems
 $as_vagrant 'echo "gem: --no-ri --no-rdoc" >> ~/.gemrc'
