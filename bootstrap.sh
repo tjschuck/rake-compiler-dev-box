@@ -28,19 +28,19 @@ fi
 if [ ! -f "$home/mingw/mingw32/bin/i686-w64-mingw32-strip.bin" ]; then
     echo "Install wrapper for i686-w64-mingw32-strip"
     mv $home/mingw/mingw32/bin/i686-w64-mingw32-strip $home/mingw/mingw32/bin/i686-w64-mingw32-strip.bin
-    cp strip_wrapper $home/mingw/mingw32/bin/i686-w64-mingw32-strip
+    cp /vagrant/strip_wrapper $home/mingw/mingw32/bin/i686-w64-mingw32-strip
 fi
 
 if [ ! -f "$home/mingw/mingw64/bin/x86_64-w64-mingw32-strip.bin" ]; then
     echo "Install wrapper for x86_64-w64-mingw32-strip"
     mv $home/mingw/mingw64/bin/x86_64-w64-mingw32-strip $home/mingw/mingw64/bin/x86_64-w64-mingw32-strip.bin
-    cp strip_wrapper $home/mingw/mingw64/bin/x86_64-w64-mingw32-strip
+    cp /vagrant/strip_wrapper $home/mingw/mingw64/bin/x86_64-w64-mingw32-strip
 fi
 
 if [ ! -f "/usr/bin/i586-mingw32msvc-strip.bin" ]; then
     echo "Install wrapper for i586-mingw32msvc-strip"
     mv /usr/bin/i586-mingw32msvc-strip /usr/bin/i586-mingw32msvc-strip.bin
-    cp strip_wrapper /usr/bin/i586-mingw32msvc-strip
+    cp /vagrant/strip_wrapper /usr/bin/i586-mingw32msvc-strip
 fi
 
 
