@@ -30,9 +30,6 @@ mingw_w64_paths="$home/mingw/mingw32/bin:$home/mingw/mingw64/bin"
 if ! grep -q $mingw_w64_paths $home/.bash_profile; then
     echo "export PATH=\$PATH:$mingw_w64_paths" >> $home/.bash_profile
 fi
-if ! grep -q "~/.rvm/scripts/rvm" $home/.bash_profile; then
-    echo "source ~/.rvm/scripts/rvm" >> $home/.bash_profile
-fi
 
 # do not generate documentation for gems
 $as_vagrant 'echo "gem: --no-ri --no-rdoc" >> ~/.gemrc'
@@ -40,8 +37,13 @@ $as_vagrant 'echo "gem: --no-ri --no-rdoc" >> ~/.gemrc'
 # install rvm
 $as_vagrant 'curl -L https://get.rvm.io | bash -s stable'
 
+# make rvm available in interactive shells
+if ! grep -q "~/.rvm/scripts/rvm" $home/.bash_profile; then
+    echo "source ~/.rvm/scripts/rvm" >> $home/.bash_profile
+fi
+
 # install rubies
-$as_vagrant '~/.rvm/bin/rvm install jruby'
-$as_vagrant '~/.rvm/bin/rvm install 2.0.0'
-$as_vagrant '~/.rvm/bin/rvm install 1.9.3'
-$as_vagrant '~/.rvm/bin/rvm install 1.8.7'
+$as_vagrant 'rvm install jruby'
+$as_vagrant 'rvm install 2.0.0'
+$as_vagrant 'rvm install 1.9.3'
+$as_vagrant 'rvm install 1.8.7'
