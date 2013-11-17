@@ -4,6 +4,7 @@ set -e
 
 as_vagrant='sudo -u vagrant -E -H bash -l -c'
 home='/home/vagrant'
+touch $home/.bash_profile
 
 apt-get -y update
 apt-get install -y curl git-core mingw32 default-jdk
