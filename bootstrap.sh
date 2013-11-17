@@ -2,7 +2,7 @@
 
 set -e
 
-as_vagrant='sudo -u vagrant -H bash -l -c'
+as_vagrant='sudo -u vagrant -E -H bash -l -c'
 home='/home/vagrant'
 
 apt-get -y update
@@ -22,6 +22,13 @@ fi
 if [ ! -f "$home/mingw/$mingw64" ]; then
     $as_vagrant "curl -L http://downloads.sourceforge.net/mingw-w64/$mingw64 -o ~/mingw/$mingw64"
     $as_vagrant "tar -C ~/mingw -xf ~/mingw/$mingw64"
+fi
+
+# Use all available CPU cores for compiling
+ncpus=`grep -c ^processor /proc/cpuinfo`
+if [[ $ncpus -gt 1 ]]; then
+    echo "Will use $ncpus workers for make"
+    export MAKE="make -j$ncpus"
 fi
 
 # add mingw-w64 to the PATH
