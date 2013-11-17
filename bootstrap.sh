@@ -15,12 +15,12 @@ mingw64='x86_64-w64-mingw32-gcc-4.7.2-release-linux64_rubenvb.tar.xz'
 
 $as_vagrant 'mkdir -p ~/mingw'
 
-if [ ! -f "$home/mingw/$mingw32" ]; then
+if [ ! -d "$home/mingw/mingw32/bin" ]; then
     $as_vagrant "curl -L http://downloads.sourceforge.net/mingw-w64/$mingw32 -o ~/mingw/$mingw32"
     $as_vagrant "tar -C ~/mingw -xf ~/mingw/$mingw32"
 fi
 
-if [ ! -f "$home/mingw/$mingw64" ]; then
+if [ ! -d "$home/mingw/mingw64/bin" ]; then
     $as_vagrant "curl -L http://downloads.sourceforge.net/mingw-w64/$mingw64 -o ~/mingw/$mingw64"
     $as_vagrant "tar -C ~/mingw -xf ~/mingw/$mingw64"
 fi
