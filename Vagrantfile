@@ -2,15 +2,18 @@ script = <<-SCRIPT
     bash /vagrant/bootstrap.sh
 SCRIPT
 
-http_proxy = ENV['http_proxy']
-if http_proxy
-    script.prepend <<-SCRIPT
-      home='/home/vagrant'
-      echo 'Acquire::http::Proxy "#{http_proxy}";' > /etc/apt/apt.conf.d/40proxy
-      if ! grep -q http_proxy $home/.bash_profile; then
-          echo 'export http_proxy=#{http_proxy}' >> $home/.bash_profile
-      fi
-    SCRIPT
+%w[http https ftp].each do |proto|
+  proxy = ENV[proto+"_proxy"]
+  if proxy
+      script.prepend <<-SCRIPT
+        home='/home/vagrant'
+        echo 'Acquire::#{proto}::Proxy "#{proxy}";' > /etc/apt/apt.conf.d/40#{proto}_proxy
+        if ! grep -q #{proto}_proxy $home/.bash_profile; then
+            echo 'Using #{proto}_proxy=#{proxy}'
+            echo 'export #{proto}_proxy=#{proxy}' >> $home/.bash_profile
+        fi
+      SCRIPT
+  end
 end
 
 Vagrant.configure('2') do |config|
