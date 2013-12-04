@@ -7,14 +7,14 @@ source "$HOME/.rvm/scripts/rvm"
 cd '/vagrant'
 
 rvm use 1.8.7
-gem install rake-compiler -v "~> 0.9.1"
+gem install rake-compiler -v "~> 0.9.2"
 
 # Build 1.8.7 with mingw32 compiler (GCC 4.2)
 rake-compiler cross-ruby VERSION=1.8.7-p374 HOST=i586-mingw32msvc
 
 # Build 1.9.3 using 1.9.3 as base
 rvm use 1.9.3
-gem install rake-compiler -v "~> 0.9.1"
+gem install rake-compiler -v "~> 0.9.2"
 
 rake-compiler cross-ruby VERSION=1.9.3-p448 HOST=i586-mingw32msvc
 

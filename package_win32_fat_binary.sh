@@ -16,4 +16,5 @@ cd $1
 rvm use 1.8.7
 gem install bundler && bundle install
 
+bundle exec rake clean
 bundle exec rake cross native gem RUBY_CC_VERSION=1.8.7:1.9.3:2.0.0
