@@ -18,6 +18,15 @@ gem install rake-compiler -v "~> 0.9.2"
 
 rake-compiler cross-ruby VERSION=1.9.3-p448 HOST=i586-mingw32msvc
 
+# Use one CPU only for 1.8,7 and 1.9.3, because of a dependency
+# issue when building for Windows.
+# Use all available CPU cores for compiling Ruby-2.0.
+ncpus=`grep -c ^processor /proc/cpuinfo`
+if [[ $ncpus -gt 1 ]]; then
+    echo "Will use $ncpus workers for make"
+    export MAKE="make -j$ncpus"
+fi
+
 # Build Ruby 2.0.0
 rake-compiler cross-ruby VERSION=2.0.0-p247 HOST=i686-w64-mingw32 debugflags="-g"
 
