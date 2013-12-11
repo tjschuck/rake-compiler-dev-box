@@ -92,4 +92,4 @@ See the [Vagrant docs](http://docs.vagrantup.com/) for more info.
 
 * [Luis Lavena](https://github.com/luislavena) for [rake-compiler](https://github.com/luislavena/rake-compiler)
 * [rails-dev-box](https://github.com/rails/rails-dev-box) for the inspiration
-
+* [Harvest](http://www.getharvest.com), my awesome employer.  [We're hiring](http://www.getharvest.com/careers)!
