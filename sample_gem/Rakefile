@@ -12,7 +12,7 @@ else
   Rake::ExtensionTask.new("sample_gem_ext", GEMSPEC) do |ext|
     ext.ext_dir = 'ext/sample_gem'
     ext.cross_compile = true
-    ext.cross_platform = ['x86-mingw32', 'x86-mswin32-60', 'x64-mingw32']
+    ext.cross_platform = ['x86-mingw32', 'x64-mingw32']
   end
 
   ENV['RUBY_CC_VERSION'].to_s.split(':').each do |ruby_version|
