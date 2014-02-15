@@ -2,7 +2,7 @@ require "bundler/gem_tasks"
 require "rake/extensiontask"
 require "rake/javaextensiontask"
 
-GEMSPEC = eval(File.read(File.expand_path("../sample_gem.gemspec", __FILE__)))
+GEMSPEC = Gem::Specification.load(File.expand_path("../sample_gem.gemspec", __FILE__))
 
 if RUBY_PLATFORM =~ /java/
   Rake::JavaExtensionTask.new("sample_gem_ext", GEMSPEC) do |ext|
