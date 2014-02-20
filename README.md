@@ -45,13 +45,11 @@ You'll now be inside the virtual machine.  The directory on your host machine wi
 
     vagrant@precise32:~$ cd /vagrant
     vagrant@precise32:/vagrant$ ls
-    bcrypt-ruby     package_java.sh                package_win32_fat_binary.sh  Vagrantfile
-    bootstrap.sh    package_native.sh              README.md
-    package_all.sh  package_win32_1.9.3_binary.sh  sample_gem
+    bcrypt-ruby  bin  bootstrap.sh  LICENSE.txt  README.md  sample_gem  Vagrantfile
 
 To build all gem binaries (native, Java, and Windows versions), run:
 
-    vagrant@precise32:/vagrant$ ./package_all.sh YOUR_GEM'S_DIR_NAME
+    vagrant@precise32:/vagrant$ package_all YOUR_GEM'S_DIR_NAME
 
 And wait for everything to build.  Replace `YOUR_GEM'S_DIR_NAME` with the correct value -- above, it would be `bcrypt-ruby`. There's a `sample_gem` dir in there as well if you'd like to experiment.
 
