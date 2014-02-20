@@ -32,13 +32,13 @@ export MAKE="make -j$(nproc)"
 # Build Ruby 2.0.0
 rake-compiler cross-ruby VERSION=2.0.0-p353 HOST=i686-w64-mingw32 debugflags="-g"
 
-# And the icing on the cake: x64 Ruby
+# Build x64 Ruby 2.0.0
 rake-compiler cross-ruby VERSION=2.0.0-p353 HOST=x86_64-w64-mingw32 debugflags="-g"
 
 # Build Ruby 2.1.0
 rake-compiler cross-ruby VERSION=2.1.0 HOST=i686-w64-mingw32 debugflags="-g"
 
-# And build x64 version of it
+# Build x64 Ruby 2.1.0
 rake-compiler cross-ruby VERSION=2.1.0 HOST=x86_64-w64-mingw32 debugflags="-g"
 
 # Mark installation prepared and don't run all this again
