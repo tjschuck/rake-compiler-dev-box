@@ -44,8 +44,6 @@ if [ ! -f "/usr/bin/i586-mingw32msvc-strip.bin" ]; then
     cp /vagrant/strip_wrapper /usr/bin/i586-mingw32msvc-strip
 fi
 
-
-
 # add mingw-w64 to the PATH
 mingw_w64_paths="$home/mingw/mingw32/bin:$home/mingw/mingw64/bin"
 
