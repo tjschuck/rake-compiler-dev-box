@@ -86,7 +86,7 @@ To reinstantiate it for future compiling, it can be recreated with:
 
 See the [Vagrant docs](http://docs.vagrantup.com/) for more info.
 
-## Acknowledgements
+## :heart: :heart: :heart:
 
 * [Luis Lavena](https://github.com/luislavena) for [rake-compiler](https://github.com/luislavena/rake-compiler)
 * [rails-dev-box](https://github.com/rails/rails-dev-box) for the inspiration
