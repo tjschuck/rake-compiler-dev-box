@@ -6,6 +6,9 @@ source "$HOME/.rvm/scripts/rvm"
 # shared directory between VM and host
 cd '/vagrant'
 
+# Use just one CPU for building 1.8.7 and 1.9.3
+export MAKE="make"
+
 rvm use 1.8.7
 gem install rake-compiler -v "~> 0.9.2"
 
@@ -17,6 +20,9 @@ rvm use 1.9.3
 gem install rake-compiler -v "~> 0.9.2"
 
 rake-compiler cross-ruby VERSION=1.9.3-p448 HOST=i586-mingw32msvc
+
+# Use all CPUs for building 2.0+
+export MAKE="make -j$(nproc)"
 
 # Build Ruby 2.0.0
 rake-compiler cross-ruby VERSION=2.0.0-p247 HOST=i686-w64-mingw32 debugflags="-g"
