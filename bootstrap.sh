@@ -68,13 +68,15 @@ rvm_path="$home/.rvm/scripts/rvm"
 
 if ! grep -q "$rvm_path" $home/.bash_profile; then
   echo "source $rvm_path" >> $home/.bash_profile
+  source $home/.bash_profile
 fi
 
 # install rubies
-$as_vagrant '~/.rvm/bin/rvm install jruby'
-$as_vagrant '~/.rvm/bin/rvm install 2.0.0'
-$as_vagrant '~/.rvm/bin/rvm install 1.9.3'
-$as_vagrant '~/.rvm/bin/rvm install 1.8.7'
+$as_vagrant 'rvm install jruby'
+$as_vagrant 'rvm install 2.1.0'
+$as_vagrant 'rvm install 2.0.0'
+$as_vagrant 'rvm install 1.9.3'
+$as_vagrant 'rvm install 1.8.7'
 
 # add /vagrant/bin to the PATH
 if ! grep -q "/vagrant/bin" $home/.bash_profile; then

@@ -10,5 +10,5 @@ cd '/vagrant'
 cd $1
 
 rvm use 1.9.3
-gem install bundler && bundle install
+bundle install
 bundle exec rake native gem
