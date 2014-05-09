@@ -10,8 +10,8 @@ rake-compiler + Vagrant = easy native gems for all.
 
 ## Dependencies
 
-* [VirtualBox](https://www.virtualbox.org)
 * [Vagrant](http://www.vagrantup.com)
+* A supported [Vagrant provider](https://docs.vagrantup.com/v2/providers/index.html) — [VirtualBox](https://docs.vagrantup.com/v2/virtualbox/index.html), [Hyper-V](https://docs.vagrantup.com/v2/hyperv/index.html), and [VMware Fusion](https://docs.vagrantup.com/v2/vmware/index.html) should all work.
 
 ## How to Build the Virtual Machine
 
