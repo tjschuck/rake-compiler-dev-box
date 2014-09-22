@@ -30,16 +30,16 @@ rake-compiler cross-ruby VERSION=1.9.3-p545 HOST=i586-mingw32msvc
 export MAKE="make -j$(nproc)"
 
 # Build Ruby 2.0.0
-rake-compiler cross-ruby VERSION=2.0.0-p451 HOST=i686-w64-mingw32 debugflags="-g"
+rake-compiler cross-ruby VERSION=2.0.0-p576 HOST=i686-w64-mingw32 debugflags="-g"
 
 # Build x64 Ruby 2.0.0
-rake-compiler cross-ruby VERSION=2.0.0-p451 HOST=x86_64-w64-mingw32 debugflags="-g"
+rake-compiler cross-ruby VERSION=2.0.0-p576 HOST=x86_64-w64-mingw32 debugflags="-g"
 
 # Build Ruby 2.1
-rake-compiler cross-ruby VERSION=2.1.1 HOST=i686-w64-mingw32 debugflags="-g"
+rake-compiler cross-ruby VERSION=2.1.3 HOST=i686-w64-mingw32 debugflags="-g"
 
 # Build x64 Ruby 2.1
-rake-compiler cross-ruby VERSION=2.1.1 HOST=x86_64-w64-mingw32 debugflags="-g"
+rake-compiler cross-ruby VERSION=2.1.3 HOST=x86_64-w64-mingw32 debugflags="-g"
 
 # Mark installation prepared and don't run all this again
 touch "$HOME/.rake-compiler/.prepared"
