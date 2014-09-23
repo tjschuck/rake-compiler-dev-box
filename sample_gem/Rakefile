@@ -1,6 +1,20 @@
 require "bundler/gem_tasks"
 require "rake/extensiontask"
 require "rake/javaextensiontask"
+require "rake/clean"
+
+CLEAN.include(
+  "tmp",
+  "lib/1.8",
+  "lib/1.9",
+  "lib/2.0",
+  "lib/2.1",
+  "lib/sample_gem_ext.jar",
+  "lib/sample_gem_ext.so"
+)
+CLOBBER.include(
+  "pkg"
+)
 
 GEMSPEC = Gem::Specification.load(File.expand_path("../sample_gem.gemspec", __FILE__))
 
