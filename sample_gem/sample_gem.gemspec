@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = SampleGem::VERSION
   spec.authors       = ["T.J. Schuck"]
   spec.email         = ["tj@tjschuck.com"]
-  spec.description   = %q{Sample gem with C and Java extensions for demoing rake-compiler-dev-box}
   spec.summary       = %q{Sample gem with C and Java extensions for demoing rake-compiler-dev-box}
+  spec.description   = %q{Sample gem with C and Java extensions for demoing rake-compiler-dev-box. See https://github.com/tjschuck/rake-compiler-dev-box for more information.}
   spec.homepage      = "https://github.com/tjschuck/rake-compiler-dev-box"
   spec.license       = "MIT"
 
