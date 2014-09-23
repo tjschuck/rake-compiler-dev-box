@@ -64,6 +64,30 @@ All of your gem binaries will be put into `pkg`:
 
 Happy compiling!
 
+### Limiting Target Rubies
+
+Some gems might choose to not support older versions of Ruby (like [Nokogiri](http://nokogiri.org), which no longer supports 1.8).
+
+If you wish to limit the versions of Ruby that your cross-compiled Windows binaries supports, you can use the environment variables `BASE_VERSION` and `RUBY_CC_VERSION`:
+
+* `BASE_VERSION`: the native version of Ruby that will be used as a base for cross-compilation
+
+* `RUBY_CC_VERSION`: a colon-separated list of target versions for cross-compilation
+
+_Note: If you wish to target 1.8.x, your base version must be 1.8.x -- versions 1.9+ cannot cross-build 1.8._
+
+#### Examples:
+
+Use Ruby 1.9.3 to cross-compile a fat binary that includes 1.9 and 2.0 binaries:
+
+    vagrant@precise64:/vagrant$ BASE_VERSION=1.9.3 RUBY_CC_VERSION=1.9.3:2.0.0 package_all nokogiri
+
+Use Ruby 2.0.0 to cross-compile a fat binary that includes 2.0 and 2.1 binaries:
+
+    vagrant@precise64:/vagrant$ BASE_VERSION=2.0.0 RUBY_CC_VERSION=2.0.0:2.1.3 package_all nokogiri
+
+By default, with no environment variables, rake-compiler-dev-box will try to cross-compile for all available versions, using 1.8 as a base.
+
 ## VM Management
 
 Log out of the virtual machine (`exit` or `^D`).
