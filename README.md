@@ -43,19 +43,19 @@ And SSH in:
 
 You'll now be inside the virtual machine.  The directory on your host machine with your gem in it and the scripts to build it will be mounted at `/vagrant`:
 
-    vagrant@precise32:~$ cd /vagrant
-    vagrant@precise32:/vagrant$ ls
+    vagrant@precise64:~$ cd /vagrant
+    vagrant@precise64:/vagrant$ ls
     bcrypt-ruby  bin  bootstrap.sh  LICENSE.txt  README.md  sample_gem  Vagrantfile
 
 To build all gem binaries (native, Java, and Windows versions), run:
 
-    vagrant@precise32:/vagrant$ package_all YOUR_GEM'S_DIR_NAME
+    vagrant@precise64:/vagrant$ package_all YOUR_GEM'S_DIR_NAME
 
 And wait for everything to build.  Replace `YOUR_GEM'S_DIR_NAME` with the correct value -- above, it would be `bcrypt-ruby`. There's a `sample_gem` dir in there as well if you'd like to experiment.
 
 All of your gem binaries will be put into `pkg`:
 
-    vagrant@precise32:/vagrant$ ls bcrypt-ruby/pkg/
+    vagrant@precise64:/vagrant$ ls bcrypt-ruby/pkg/
     bcrypt-ruby-3.1.0            bcrypt-ruby-3.1.0-x86-linux.gem
     bcrypt-ruby-3.1.0.gem        bcrypt-ruby-3.1.0-x86-mingw32
     bcrypt-ruby-3.1.0-java       bcrypt-ruby-3.1.0-x86-mingw32.gem
