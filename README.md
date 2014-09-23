@@ -66,7 +66,7 @@ Happy compiling!
 
 ### Limiting Target Rubies
 
-Some gems might choose to not support older versions of Ruby (like [Nokogiri](http://nokogiri.org), which no longer supports 1.8).
+Some gems might choose not to support older versions of Ruby (like [Nokogiri](http://nokogiri.org), which no longer supports 1.8).
 
 If you wish to limit the versions of Ruby that your cross-compiled Windows binaries supports, you can use the environment variables `BASE_VERSION` and `RUBY_CC_VERSION`:
 
