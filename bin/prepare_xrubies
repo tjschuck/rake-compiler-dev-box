@@ -13,7 +13,7 @@ fi
 cd '/vagrant'
 
 # Install rake-compiler in all Rubies
-rvm all do gem install rake-compiler -v "~> 0.9.2"
+rvm all do gem install rake-compiler -v "~> 0.9.3"
 
 # Use just one CPU for building 1.8.7 and 1.9.3
 export MAKE="make"
@@ -24,7 +24,7 @@ rake-compiler cross-ruby VERSION=1.8.7-p374 HOST=i586-mingw32msvc
 
 # Build 1.9.3 using 1.9.3 as base
 rvm use 1.9.3
-rake-compiler cross-ruby VERSION=1.9.3-p545 HOST=i586-mingw32msvc
+rake-compiler cross-ruby VERSION=1.9.3-p547 HOST=i586-mingw32msvc
 
 # Use all CPUs for building 2.0+
 export MAKE="make -j$(nproc)"
