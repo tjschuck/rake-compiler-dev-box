@@ -12,10 +12,10 @@ cd '/vagrant'
 # passed in path of gem to be cross-compiled
 cd $1
 
-base_version=${BASE_VERSION:-1.8.7-p374}
+base_version=${BASE_VERSION:-1.9.3}
 cc_versions=${RUBY_CC_VERSION:-1.8.7:1.9.3:2.0.0:2.1.4}
 
-# need to use 1.8.7 for fat-binaries (1.9.3 can't cross-build 1.8.7)
+# Use Ruby 1.9.3 as base to cross-compile to different versions
 rvm use $base_version
 bundle install
 
