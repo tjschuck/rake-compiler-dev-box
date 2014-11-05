@@ -20,4 +20,4 @@ rvm use $base_version
 bundle install
 
 bundle exec rake clean
-bundle exec rake cross native gem RUBY_CC_VERSION=$cc_versions
+bundle exec rake cross native gem RUBY_CC_VERSION=$cc_versions RUBYOPT=
