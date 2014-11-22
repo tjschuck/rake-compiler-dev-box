@@ -23,6 +23,16 @@ Easy-peasy:
 
 That's it!  Go grab a cup of coffee, though -- it can take a couple of minutes to build the first time.
 
+### Increase Default CPU and Memory Settings
+
+The base image (`hashicorp/precise64`) has **2** CPUs and **384** MB of RAM by default. However, the VM will run compilers and compilers require a lot of resources. If you can allocate more resources of your computer to the virtual machine, it is recommended to do so. Run:
+
+    $ vagrant halt
+
+When the VM is shut down, open your virtualizer's management utility, find the **rake-compiler-dev-box_default_9999999999999_99999** machine, and maximize its number of processors and memory size. Then start it again:
+
+    $ vagrant up
+
 ## Building Your Native Gems
 
 Once you have your gem ready to package, clone or move your repo into the same directory as the rake-compiler-dev-box:
