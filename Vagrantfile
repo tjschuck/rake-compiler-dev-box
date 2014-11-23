@@ -8,4 +8,9 @@ Vagrant.configure('2') do |config|
     v.memory = 1024
     v.cpus = 4
   end
+
+  config.vm.provider "vmware_fusion" do |f|
+    f.vmx['memsize'] = 1024
+    f.vmx['numvcpus'] = 4
+  end
 end
