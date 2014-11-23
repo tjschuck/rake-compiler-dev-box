@@ -23,9 +23,11 @@ Easy-peasy:
 
 That's it!  Go grab a cup of coffee, though -- it can take a couple of minutes to build the first time.
 
-### Increase Default CPU and Memory Settings
+### VM CPU and RAM Settings
 
-The base image (`hashicorp/precise64`) has **2** CPUs and **384** MB of RAM by default. However, the VM will run compilers and compilers require a lot of resources. If you can allocate more resources of your computer to the virtual machine, it is recommended to do so. Run:
+The base image (`hashicorp/precise64`) has **2** CPUs and **384** MB of RAM by default. However, the VM will run compilers and compilers require a lot of resources. Because of that we increased CPU count to **4** and RAM size to **1024** MB in `Vagrantfile` for VirtualBox users. Feel free to adjust these parameters. If you can allocate more resources of your computer to the virtual machine, it is recommended to do so.
+
+If you use some other virtualization software, you should be able to adjust the settings manually. Run:
 
     $ vagrant halt
 
