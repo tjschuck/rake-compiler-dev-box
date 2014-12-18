@@ -1,4 +1,4 @@
-CPU_COUNT = 4
+CPU_COUNT = 2
 RAM_SIZE = 1024
 
 Vagrant.require_version '>= 1.6'
