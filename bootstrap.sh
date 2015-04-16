@@ -13,7 +13,7 @@ if [[ $(nproc) -gt 1 ]] && ! grep -q "make -j" $home/.bash_profile; then
 fi
 
 apt-get -y update
-apt-get install -y curl git-core mingw32 default-jdk
+apt-get install -y curl git-core mingw32 default-jdk unzip
 
 # Download mingw-w64 compilers
 mingw32='i686-w64-mingw32-gcc-4.7.2-release-linux64_rubenvb.tar.xz'
