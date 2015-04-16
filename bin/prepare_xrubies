@@ -24,22 +24,29 @@ rake-compiler cross-ruby VERSION=1.8.7-p374 HOST=i586-mingw32msvc
 
 # Build 1.9.3 using 1.9.3 as base
 rvm use 1.9.3
-rake-compiler cross-ruby VERSION=1.9.3-p550 HOST=i586-mingw32msvc
+rake-compiler cross-ruby VERSION=1.9.3-p551 HOST=i586-mingw32msvc
 
 # Use all CPUs for building 2.0+
 export MAKE="make -j$(nproc)"
 
 # Build Ruby 2.0.0
-rake-compiler cross-ruby VERSION=2.0.0-p594 HOST=i686-w64-mingw32 debugflags="-g"
+rake-compiler cross-ruby VERSION=2.0.0-p645 HOST=i686-w64-mingw32 debugflags="-g"
 
 # Build x64 Ruby 2.0.0
-rake-compiler cross-ruby VERSION=2.0.0-p594 HOST=x86_64-w64-mingw32 debugflags="-g"
+rake-compiler cross-ruby VERSION=2.0.0-p645 HOST=x86_64-w64-mingw32 debugflags="-g"
 
 # Build Ruby 2.1
-rake-compiler cross-ruby VERSION=2.1.4 HOST=i686-w64-mingw32 debugflags="-g"
+rake-compiler cross-ruby VERSION=2.1.6 HOST=i686-w64-mingw32 debugflags="-g"
 
 # Build x64 Ruby 2.1
-rake-compiler cross-ruby VERSION=2.1.4 HOST=x86_64-w64-mingw32 debugflags="-g"
+rake-compiler cross-ruby VERSION=2.1.6 HOST=x86_64-w64-mingw32 debugflags="-g"
+
+# Build Ruby 2.2 using 2.0.0 as base
+rvm use 2.0.0
+rake-compiler cross-ruby VERSION=2.2.2 HOST=i686-w64-mingw32 debugflags="-g"
+
+# Build x64 Ruby 2.2
+rake-compiler cross-ruby VERSION=2.2.2 HOST=x86_64-w64-mingw32 debugflags="-g"
 
 # Mark installation prepared and don't run all this again
 touch "$HOME/.rake-compiler/.prepared"

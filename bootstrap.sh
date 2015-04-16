@@ -78,6 +78,7 @@ $as_vagrant 'rvm install 1.8.7-p374'
 $as_vagrant 'rvm install 1.9.3'
 $as_vagrant 'rvm install 2.0.0'
 $as_vagrant 'rvm install 2.1'
+$as_vagrant 'rvm install 2.2'
 
 # add /vagrant/bin to the PATH
 if ! grep -q "/vagrant/bin" $home/.bash_profile; then
