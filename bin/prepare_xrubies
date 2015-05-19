@@ -12,8 +12,9 @@ fi
 # shared directory between VM and host
 cd '/vagrant'
 
-# Install rake-compiler in all Rubies
+# Install required gems in all system Rubies
 rvm all do gem install rake-compiler -v "~> 0.9.3"
+rvm all do gem install bundler -v "~> 1.9.9"
 
 # Use just one CPU for building 1.8.7 and 1.9.3
 export MAKE="make"
