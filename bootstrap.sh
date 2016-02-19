@@ -79,6 +79,9 @@ $as_vagrant 'rvm install 1.9.3'
 $as_vagrant 'rvm install 2.0.0'
 $as_vagrant 'rvm install 2.1'
 
+# install bundler into every ruby
+$as_vagrant 'rvm all do gem install bundler'
+
 # add /vagrant/bin to the PATH
 if ! grep -q "/vagrant/bin" $home/.bash_profile; then
   echo "export PATH=\$PATH:/vagrant/bin" >> $home/.bash_profile
