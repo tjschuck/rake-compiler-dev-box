@@ -13,7 +13,7 @@ fi
 cd '/vagrant'
 
 # Install rake-compiler in all Rubies
-rvm all do gem install rake-compiler -v "~> 0.9.3"
+rvm all do gem install rake-compiler -v "~> 0.9.5"
 
 # Use just one CPU for building 1.8.7 and 1.9.3
 export MAKE="make"
