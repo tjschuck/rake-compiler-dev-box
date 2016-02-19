@@ -78,6 +78,7 @@ $as_vagrant 'rvm install 1.8.7-p374'
 $as_vagrant 'rvm install 1.9.3'
 $as_vagrant 'rvm install 2.0.0'
 $as_vagrant 'rvm install 2.1'
+$as_vagrant 'rvm install 2.2'
 
 # install bundler into every ruby
 $as_vagrant 'rvm all do gem install bundler'
