@@ -74,9 +74,9 @@ fi
 
 # install rubies
 $as_vagrant 'rvm install jruby'
-$as_vagrant 'rvm install 1.8.7-p374'
-$as_vagrant 'rvm install 1.9.3-p551'
-$as_vagrant 'rvm install 2.0.0-p648'
+$as_vagrant 'rvm install 1.8.7-p374 && rvm alias create 1.8.7 1.8.7-p374'
+$as_vagrant 'rvm install 1.9.3-p551 && rvm alias create 1.9.3 1.9.3-p551'
+$as_vagrant 'rvm install 2.0.0-p648 && rvm alias create 2.0.0 2.0.0-p648'
 $as_vagrant 'rvm install 2.1.8'
 
 # install bundler into every ruby
