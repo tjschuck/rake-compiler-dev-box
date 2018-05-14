@@ -61,6 +61,9 @@ $as_vagrant 'rvm install 1.9.3-p551 && rvm alias create 1.9.3 1.9.3-p551'
 $as_vagrant 'rvm install 2.0.0-p648 && rvm alias create 2.0.0 2.0.0-p648'
 $as_vagrant 'rvm install 2.1.8'
 $as_vagrant 'rvm install 2.2.4'
+$as_vagrant 'rvm install 2.3.3'
+$as_vagrant 'rvm install 2.4.4'
+$as_vagrant 'rvm install 2.5.1'
 
 # install bundler into every ruby
 $as_vagrant 'rvm all do gem install bundler'
