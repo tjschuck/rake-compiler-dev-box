@@ -15,6 +15,11 @@ fi
 apt-get -y update
 apt-get install -y curl git-core mingw-w64 default-jdk unzip
 
+# Install mingw32 from trusty universe
+echo "deb http://archive.ubuntu.com/ubuntu/ trusty main universe" >> /etc/apt/sources.list
+apt-get -y update
+apt-get install -y mingw32
+
 # Install wrappers for strip commands
 if [ ! -f "/usr/bin/i686-w64-mingw32-strip.bin" ]; then
   echo "Install wrapper for i686-w64-mingw32-strip"
