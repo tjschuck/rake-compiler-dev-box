@@ -13,7 +13,7 @@ cd '/vagrant'
 cd $1
 
 base_version=${BASE_VERSION:-1.9.3}
-cc_versions=${RUBY_CC_VERSION:-1.8.7:1.9.3:2.0.0:2.1.8:2.2.4}
+cc_versions=${RUBY_CC_VERSION:-1.8.7:1.9.3:2.0.0:2.1.8:2.2.4:2.3.3:2.4.4:2.5.1}
 
 # Use Ruby 1.9.3 as base to cross-compile to different versions
 rvm use $base_version

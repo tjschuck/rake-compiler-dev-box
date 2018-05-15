@@ -13,48 +13,30 @@ if [[ $(nproc) -gt 1 ]] && ! grep -q "make -j" $home/.bash_profile; then
 fi
 
 apt-get -y update
-apt-get install -y curl git-core mingw32 default-jdk unzip
+apt-get install -y curl git-core mingw-w64 default-jdk unzip
 
-# Download mingw-w64 compilers
-mingw32='i686-w64-mingw32-gcc-4.7.2-release-linux64_rubenvb.tar.xz'
-mingw64='x86_64-w64-mingw32-gcc-4.7.2-release-linux64_rubenvb.tar.xz'
-
-$as_vagrant 'mkdir -p ~/mingw'
-
-if [ ! -d "$home/mingw/mingw32/bin" ]; then
-  $as_vagrant "curl -L http://downloads.sourceforge.net/mingw-w64/$mingw32 -o ~/mingw/$mingw32"
-  $as_vagrant "tar -C ~/mingw -xf ~/mingw/$mingw32"
-fi
-
-if [ ! -d "$home/mingw/mingw64/bin" ]; then
-  $as_vagrant "curl -L http://downloads.sourceforge.net/mingw-w64/$mingw64 -o ~/mingw/$mingw64"
-  $as_vagrant "tar -C ~/mingw -xf ~/mingw/$mingw64"
-fi
+# Install mingw32 from trusty universe
+echo "deb http://archive.ubuntu.com/ubuntu/ trusty main universe" >> /etc/apt/sources.list
+apt-get -y update
+apt-get install -y mingw32
 
 # Install wrappers for strip commands
-if [ ! -f "$home/mingw/mingw32/bin/i686-w64-mingw32-strip.bin" ]; then
+if [ ! -f "/usr/bin/i686-w64-mingw32-strip.bin" ]; then
   echo "Install wrapper for i686-w64-mingw32-strip"
-  mv $home/mingw/mingw32/bin/i686-w64-mingw32-strip $home/mingw/mingw32/bin/i686-w64-mingw32-strip.bin
-  cp /vagrant/bin/strip_wrapper $home/mingw/mingw32/bin/i686-w64-mingw32-strip
+  mv /usr/bin/i686-w64-mingw32-strip /usr/bin/i686-w64-mingw32-strip.bin
+  cp /vagrant/bin/strip_wrapper /usr/bin/i686-w64-mingw32-strip
 fi
 
-if [ ! -f "$home/mingw/mingw64/bin/x86_64-w64-mingw32-strip.bin" ]; then
+if [ ! -f "/usr/bin/x86_64-w64-mingw32-strip.bin" ]; then
   echo "Install wrapper for x86_64-w64-mingw32-strip"
-  mv $home/mingw/mingw64/bin/x86_64-w64-mingw32-strip $home/mingw/mingw64/bin/x86_64-w64-mingw32-strip.bin
-  cp /vagrant/bin/strip_wrapper $home/mingw/mingw64/bin/x86_64-w64-mingw32-strip
+  mv /usr/bin/x86_64-w64-mingw32-strip /usr/bin/x86_64-w64-mingw32-strip.bin
+  cp /vagrant/bin/strip_wrapper /usr/bin/x86_64-w64-mingw32-strip
 fi
 
 if [ ! -f "/usr/bin/i586-mingw32msvc-strip.bin" ]; then
   echo "Install wrapper for i586-mingw32msvc-strip"
   mv /usr/bin/i586-mingw32msvc-strip /usr/bin/i586-mingw32msvc-strip.bin
   cp /vagrant/bin/strip_wrapper /usr/bin/i586-mingw32msvc-strip
-fi
-
-# add mingw-w64 to the PATH
-mingw_w64_paths="$home/mingw/mingw32/bin:$home/mingw/mingw64/bin"
-
-if ! grep -q $mingw_w64_paths $home/.bash_profile; then
-  echo "export PATH=\$PATH:$mingw_w64_paths" >> $home/.bash_profile
 fi
 
 # do not generate documentation for gems
@@ -79,6 +61,9 @@ $as_vagrant 'rvm install 1.9.3-p551 && rvm alias create 1.9.3 1.9.3-p551'
 $as_vagrant 'rvm install 2.0.0-p648 && rvm alias create 2.0.0 2.0.0-p648'
 $as_vagrant 'rvm install 2.1.8'
 $as_vagrant 'rvm install 2.2.4'
+$as_vagrant 'rvm install 2.3.3'
+$as_vagrant 'rvm install 2.4.4'
+$as_vagrant 'rvm install 2.5.1'
 
 # install bundler into every ruby
 $as_vagrant 'rvm all do gem install bundler'
