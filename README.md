@@ -1,5 +1,11 @@
 # rake-compiler-dev-box
 
+_⚠️ This is no longer actively maintained.  Please check out https://github.com/rake-compiler/rake-compiler-dock as the successor to this tool._
+
+_Original README preserved below._
+
+---
+
 A virtual machine for using rake-compiler.
 
 [rake-compiler](https://github.com/luislavena/rake-compiler) is **totally awesome**, and you should be using it if you maintain a Ruby gem with C or Java extensions to build native binaries for your users.
